@@ -1,19 +1,35 @@
-# vue_in_docker
+## Start project
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Create docker network
+```shell
+docker create network super_network
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+### Start frontend
+> Change folder to vue_in_docker and type:
+```shell
+docker-compose up --build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Start backend
+> Change folder to django_in_docker and type:
+```shell
+docker-compose up --build
+```
+
+### Fill database with fake users
+> Change folder to django_in_docker and type:
+```shell
+make fill_db
+```
+
+### Create superuser
+> Change folder to django_in_docker and type:
+```shell
+make superuser
+```
+
+### Endpoints:
+> / - frontend
+>
+> /api - rest_framework
