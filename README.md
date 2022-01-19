@@ -33,3 +33,12 @@ make superuser
 > http://localhost - frontend
 >
 > http://localhost/api/ - rest_framework
+
+
+### Run Vue.js without docker-compose
+```shell
+docker image build -t test_vue:build . -f Dockerfile 
+```
+```shell
+docker run -p 8080:8080 test_vue:build 
+```
